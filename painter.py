@@ -103,6 +103,9 @@ while True:
 
 
     cv2.imshow('paint', frame)
-    cv2.waitKey(1)
+    # Wait for 1 millisecond and check if 'Esc' or 'q' is pressed
+    key = cv2.waitKey(1) & 0xFF
+    if key == 27 or key == ord("q"):  # 27 is the ASCII code for the 'Esc' key
+        break
 
     # cv2.destroyAllWindows()
